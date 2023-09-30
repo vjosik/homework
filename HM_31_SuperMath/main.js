@@ -19,9 +19,9 @@ function SuperMath() {
         } else {
             const trueZnak = confirm("Ви хочете виконати " + znak + "з X:" + X + " та з Y:" + Y)
             if (trueZnak == true) {
-                return performOperation(X, Y, znak)
+                return this.performOperation(X, Y, znak)
             }
-            else{
+            else {
                 return this.input();
             }
         }
@@ -31,33 +31,33 @@ function SuperMath() {
         const validOperators = ['+', '-', '/', '*', '%'];
         return validOperators.includes(operator);
     }
+}
 
-    function performOperation(X, Y, znak) {
-        switch (znak) {
-            case '+':
-                return X + Y;
-            case '-':
-                return X - Y;
-            case '/':
-                if (Y === 0) {
-                    return "Ділення на нуль неможливе";
-                }
-                return X / Y;
-            case '*':
-                return X * Y;
-            case '%':
-                if (Y === 0) {
-                    return "Ділення на нуль неможливе";
-                }
-                return X % Y;
-            default:
-                return "Невідомий оператор";
-        }
+SuperMath.prototype.performOperation = function (X, Y, znak) {
+    switch (znak) {
+        case '+':
+            return X + Y;
+        case '-':
+            return X - Y;
+        case '/':
+            if (Y === 0) {
+                return "Ділення на нуль неможливе";
+            }
+            return X / Y;
+        case '*':
+            return X * Y;
+        case '%':
+            if (Y === 0) {
+                return "Ділення на нуль неможливе";
+            }
+            return X % Y;
+        default:
+            return "Невідомий оператор";
     }
 }
 
 const calculator = new SuperMath();
-const obj = { X: 12, Y: 3, znak: "%" };
+const obj = { X: 12, Y: 3, znak: "+" };
 const result = calculator.check(obj);
 console.log("Результат: ", result);
 
