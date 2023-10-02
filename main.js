@@ -7,9 +7,9 @@ class Person {
 
 class Flat {
     residents = []
-    setPerson(Person){
-        if(Person != null){
-            this.residents.push(Person)
+    setPerson(person){
+        if(person != null){
+            this.residents.push(person)
         }
     }
 }   
@@ -20,9 +20,10 @@ class Building {
         this.flats = [];
     }
     
-    addApart(Flat){
-        if(this.maxApartmentsNumber < this.flats.length){
-            this.flats.push(Flat)
+    addApart(flat){
+        if(this.maxApartmentsNumber > this.flats.length){
+            this.flats.push(flat)
+            console.log("Квартира додана")
         }else{
             console.log("Усі квартири зайняті")
         }
