@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <br><br>
+    <textarea id="result" rows="4" cols="50"></textarea>
+
+    <script>
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const input3 = document.getElementById("input3");
+        const resultTextArea = document.getElementById("result");
+
+        let value1 = input1.value;
+        let value2 = input2.value;
+        let value3 = input3.value;
+
+        setInterval(function () {
+            if (input1.value !== value1 || input2.value !== value2 || input3.value !== value3) {
+                const combinedValues = [input1.value, input2.value, input3.value].join(", ");
+                resultTextArea.value = combinedValues;
+                value1 = input1.value;
+                value2 = input2.value;
+                value3 = input3.value;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
