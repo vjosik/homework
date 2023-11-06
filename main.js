@@ -5,9 +5,8 @@ const fs = require('fs');
 
 app.use(bodyParser.json());
 
-const data = require('./data.json'); // Завантаження даних з data.json
+const data = require('./data.json');
 
-// Запит, що повертає всі товари відповідно до наявності на складі і цінового діапазону
 app.get('/products', (req, res) => {
     const query = req.query;
     let filteredProducts = data;
@@ -25,7 +24,6 @@ app.get('/products', (req, res) => {
     res.json(filteredProducts);
 });
 
-// Запит для отримання товару за його ID
 app.get('/products/:id', (req, res) => {
     const productId = req.params.id;
     const product = data.find(product => product.productId === parseInt(productId));
@@ -37,7 +35,6 @@ app.get('/products/:id', (req, res) => {
     }
 });
 
-// Запит для отримання товарів за іменем товару
 app.get('/products/byName', (req, res) => {
     const productName = req.query.productName;
     const productsByName = data.filter(product => product.productName.includes(productName));
@@ -45,7 +42,6 @@ app.get('/products/byName', (req, res) => {
     res.json(productsByName);
 });
 
-// Запуск сервера на порту 3000
 app.listen(3000, () => {
-    console.log('Сервер слухає на порту 3000');
+    console.log('Сервер працює на порту: 3000');
 });
