@@ -1,3 +1,5 @@
+import './styles/style.scss';
+
 function makeRequest(method, url, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
