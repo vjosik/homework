@@ -1,0 +1,53 @@
+// signup.scss
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .card {
+      width: 60%;
+    }
+  
+    .card-body {
+      padding: 20px;
+  
+      h5 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+  
+      .form-group {
+        margin-bottom: 15px;
+  
+        label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+  
+        select,
+        input[type="text"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          box-sizing: border-box;
+        }
+      }
+  
+      .form-check {
+        margin-bottom: 10px;
+  
+        label {
+          margin-left: 5px;
+        }
+      }
+  
+      button {
+        width: 100%;
+      }
+    }
+  }
+  

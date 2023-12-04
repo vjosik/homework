@@ -1,0 +1,5 @@
+@import "../../common/styles/_vars.scss";
+
+.sign-in {
+  min-height: calc(100vh - $header_height);
+}
