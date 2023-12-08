@@ -14,11 +14,19 @@ export default class RadioButton extends Component {
           <input type="radio" class="form-check-input" id="${this.name}-${this.value}" name="${this.name}" value="${this.value}">
           <label class="form-check-label" for="${this.name}-${this.value}">${this.label}</label>
         </div>
-      `;
+        `;
     }
-    
+
+    onChangeHandler(event) {
+        console.log('--call onChangeHandler input -- ');
+
+        this.props.onChange({
+            [this.props.name]: event.target.value
+        });
+    }
+
     bindEvent(container) {
-        container.querySelector('input').addEventListener(
+        container.querySelector(`input`).addEventListener(
             'change',
             (event) => this.onChangeHandler(event)
         )

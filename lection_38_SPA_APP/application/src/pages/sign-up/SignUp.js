@@ -6,7 +6,7 @@ import Select from "@/common/components/Select/Select";
 import RadioButton from "@/common/components/RadioButton/RadioButton";
 
 export default class SignUp extends Component {
-    credentials = { email: '', login: '', password: '', gender: '' };
+    credentials = { email: '' };
 
 
 
@@ -44,7 +44,6 @@ export default class SignUp extends Component {
             <label for="female">Female:</label>
             <slot name="female"></slot>
           </div>
-
           <button type="button" class="btn btn-primary">Sign Up</button>
         </div>
       </div>
@@ -56,7 +55,7 @@ export default class SignUp extends Component {
         console.log('--- call onChange in SignUp --', value);
 
         this.credentials= {
-            ...this.user,
+            ...this.credentials,
             ...value
         };
 
@@ -98,15 +97,18 @@ export default class SignUp extends Component {
         });
 
         const radioButtonMale = new RadioButton({
-            label: 'Male',
+            label: 'male',
             name: 'gender',
-            value: 'male'
+            value: 'male',
+            onChange: this.onChange.bind(this)
+            
         });
 
         const radioButtonFemale = new RadioButton({
-            label: 'Female',
+            label: 'female',
             name: 'gender',
-            value: 'female'
+            value: 'female',
+            onChange: this.onChange.bind(this)
         });
 
         this.replaceSlot(container, [
@@ -119,8 +121,11 @@ export default class SignUp extends Component {
 
         return container;
     }
+
+    
     onClickHandler() {
         console.log('click');
+        
     }
 
     bindEvent(container) {
