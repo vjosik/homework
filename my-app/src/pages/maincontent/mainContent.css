@@ -1,0 +1,8 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .main-content p {
+    font-size: 18px;
+  }
