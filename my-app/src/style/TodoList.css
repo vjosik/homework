@@ -1,0 +1,39 @@
+.container {
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #7c7c7c;
+    text-align: center;
+    color: #fff;
+  }
+
+  input{
+    border-radius: 10px;
+    width: 60%;
+    height: 20px;
+    margin-right: 15px;
+  }
+
+  button{
+    border-radius: 10px;
+    width: 23%;
+    height: 30px;
+    background-color: green;
+    font-weight: 600;
+  }
+  
+  button:disabled {
+    background-color: #a4caed;
+    cursor: not-allowed;
+  }
